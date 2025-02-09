@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Smart Contract</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js"></script> -->
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6; /* Light grey background */
+      color: #333; /* Dark grey text */
+    }
+ 
+    /* Header Styles */
+    header {
+      background:  #564e4e; /* Dark grey */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items:center ;
+    }
+ 
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+ 
+    /* Form Styles */
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff; /* White background */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+ 
+    h2 {
+      font-size: 22px;
+      color: #555; /* Medium grey */
+      margin-bottom: 10px;
+    }
+ 
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+ 
+    input, button {
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      transition: all 0.3s ease;
+    }
+ 
+    input:focus {
+      outline: none;
+      border-color: #4a90e2; /* Accent blue */
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    }
+ 
+    button {
+      background: #4a90e2; /* Accent blue */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+ 
+    button:hover {
+      background: #357ABD; /* Darker accent blue */
+    }
+ 
+    /* Output Styles */
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9; /* Light grey */
+      border-left: 5px solid #4a90e2; /* Accent blue */
+      border-radius: 5px;
+      color: #333;
+    }
+ 
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color:#463939; /* Dark grey*/ 
+      color: white;
+      margin-top: 20px;
+    }
+ 
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+ 
+    footer a {
+      color: #4a90e2; /* Accent blue */
+      text-decoration: none;
+    }
+ 
+    footer a:hover {
+      text-decoration: underline;
+    }
+    #server{
+      color:"white";
+      background-color: rgb(209, 237, 239);
+      border:1px solid white;
+      border-radius: 5px;
+      width:600px;
+      align-items: center;
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Land Registry System</h1>
+    <h2 id="server">connected to Ganache:Network ID -</h2>
+  </header>
+ 
+  <div class="container">
+    <h2>Register New Land</h2>
+    <form id="createLandForm">
+      <input type="text" id="landid" placeholder="LandId" value="" optional>
+      <input type="text" id="location" placeholder="location" required>
+      <input type="text" id="area" placeholder="Area" required>
+      <button type="submit" id="btn">Register Land</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <h2>Transfer Land Ownership</h2>
+    <form id="checkLandOwnerForm">
+      <input type="number" id="landid" placeholder="LandID" required>
+      <input type="text" id="newaddress" placeholder="Owner Address" required>
+      <button type="submit">Transfer Ownership</button>
+    </form>
+  </div>
+
+ 
+  <div class="container">
+    <h2>Check Land Details</h2>
+    <form id="checkLandForm">
+      <input type="number" id="landid" placeholder="LandID" required>
+      <button type="submit">Check Land deatials</button>
+    </form>
+  </div>
+
+   
+  <div class="container">
+    <h2>Check Land Registration</h2>
+    <form id="checkLandregForm">
+      <input type="number" id="landid" placeholder="LandID" required>
+      <button type="submit">Check Land Registration</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <h2>Output</h2>
+    <div class="output" id="output">Output will be displayed here.</div>
+  </div> 
+ 
+ 
+  <footer>
+    <p>&copy; 2025 Bank Contract UI | Designed with <span style="color: #4a90e2;">♥</span> for Blockchain Projects</p>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js"></script>
+  <script src="index.js"><script/>
+    </script>
+</body>
+</html>
+
+
+
+
+
